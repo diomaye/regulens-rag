@@ -2,7 +2,7 @@
 
 | Milestone | Status | Notes |
 |---|---|---|
-| M0 Scaffold | not started | |
+| M0 Scaffold | done | pyproject.toml, config, Makefile, docker-compose, CI, tests, architecture.md |
 | M1 Ingestion | not started | |
 | M2 Retrieval | not started | |
 | M3 Eval harness | not started | |

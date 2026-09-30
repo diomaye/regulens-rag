@@ -31,7 +31,7 @@ Build:
 Done when: all manifest documents ingested; per-document report (pages, sections, language);
 corpus hash computed and stored.
 
-## M2: Chunking, embeddings, hybrid retrieval (week 2)
+## M2: Chunking, embeddings, hybrid retrieval
 
 Build:
 - `Chunker` interface with two strategies: section-aware (with overlap) and fixed-size
@@ -44,7 +44,7 @@ Build:
 
 Done when: retrieval works in FR and EN from the CLI; ADRs for chunking and embedding choice.
 
-## M3: Eval harness (week 3)
+## M3: Eval harness
 
 Build:
 - Golden set schema (Pydantic) and validator for `evals/golden_set.jsonl`
@@ -59,7 +59,7 @@ OWNER TASK (not Claude): write 80–120 questions by hand. 25% French, 20% out o
 
 Done when: `make eval-smoke` runs on 20 questions; comparison table in README.
 
-## M4: Generation with citations and refusal (week 3–4)
+## M4: Generation with citations and refusal
 
 Build:
 - Prompt files in `src/regulens/prompts/` with an explicit version id
@@ -72,7 +72,7 @@ Build:
 
 Done when: thresholds in `evals/thresholds.yaml` met, or misses reported with a fix plan.
 
-## M5: API, UI, documentation (week 4)
+## M5: API, UI, documentation
 
 Build:
 - FastAPI: `POST /ask`, `GET /health`; request ids; input validation

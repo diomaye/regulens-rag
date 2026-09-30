@@ -6,3 +6,6 @@ __pycache__/
 .pytest_cache/
 data/raw/
 .claude/settings.local.json
+*.egg-info/
+dist/
+evals/results/
