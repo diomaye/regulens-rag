@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run *)",
+      "Bash(uv sync *)",
+      "Bash(uv add *)",
+      "Bash(make *)",
+      "Bash(docker compose *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ],
+    "ask": [
+      "Bash(git push *)",
+      "Bash(uv remove *)",
+      "Bash(rm *)",
+      "Bash(curl *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./secrets/**)",
+      "Edit(./evals/golden_set.jsonl)",
+      "Edit(./evals/thresholds.yaml)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (uv run ruff format --quiet . ; uv run ruff check --fix --quiet .) >/dev/null 2>&1; exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}
