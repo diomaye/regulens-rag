@@ -19,6 +19,9 @@ class Settings(BaseSettings):
     # Database
     database_url: str = "postgresql://regulens:regulens@localhost:5432/regulens"
 
+    # Data
+    data_dir: str = "data"
+
     # Logging
     log_level: str = "INFO"
 
