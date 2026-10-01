@@ -52,7 +52,14 @@ def download_document(
         return dest
 
     logger.info("Downloading %s from %s", row.doc_id, row.url)
-    with httpx.Client(timeout=timeout, follow_redirects=True) as client:
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        ),
+        "Accept": "application/pdf,*/*",
+    }
+    with httpx.Client(timeout=timeout, follow_redirects=True, headers=headers) as client:
         resp = client.get(row.url)
         resp.raise_for_status()
 

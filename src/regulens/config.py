@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     embedding_model: str = "BAAI/bge-m3"
 
     # Database
-    database_url: str = "postgresql://regulens:regulens@localhost:5432/regulens"
+    database_url: str = "postgresql://regulens:regulens@localhost:5434/regulens"
 
     # Data
     data_dir: str = "data"
